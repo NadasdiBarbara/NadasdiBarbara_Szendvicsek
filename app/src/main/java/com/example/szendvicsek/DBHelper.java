@@ -1,5 +1,6 @@
 package com.example.szendvicsek;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -39,6 +40,19 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public Cursor cursor(String ar){
         SQLiteDatabase db = this.getReadableDatabase();
-        return db.rawQuery("SELECT nev FROM szendvicsek WHERE ar <= ?", new String[]{ar});
+        //return db.query(TABLE_NAME, new String[]{COL_ID,COL_NEV,COL_LEIRAS,COL_ELKESZITES,COL_AR},null,null,null,null,null);
+        //return db.rawQuery("SELECT nev FROM szendvicsek WHERE ar <= ?", new String[]{ar});
+        return db.rawQuery("SELECT * FROM "+TABLE_NAME + " WHERE "+COL_AR
+                +" = ? ", new String[]{ar});
+    }
+    public boolean rogzit(String nev, String leiras, int perc, int ar){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COL_NEV, nev);
+        values.put(COL_LEIRAS, leiras);
+        values.put(COL_ELKESZITES, perc);
+        values.put(COL_AR, ar);
+        return db.insert(TABLE_NAME, null, values) != -1;
+
     }
 }
