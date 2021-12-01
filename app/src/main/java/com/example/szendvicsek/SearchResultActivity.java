@@ -29,7 +29,16 @@ public class SearchResultActivity extends AppCompatActivity {
         }else{
             StringBuilder stringBuilder = new StringBuilder();
             while (cursor.moveToNext()){
-                stringBuilder.append(cursor.getInt(0));
+                stringBuilder.append("ID: ").append(cursor.getInt(0));
+                stringBuilder.append(System.lineSeparator());
+                stringBuilder.append("NÉV: ").append(cursor.getInt(1));
+                stringBuilder.append(System.lineSeparator());
+                stringBuilder.append("LEÍRÁS: ").append(cursor.getInt(2));
+                stringBuilder.append(System.lineSeparator());
+                stringBuilder.append("ELKÉSZÍTÉS: ").append(cursor.getInt(3));
+                stringBuilder.append(System.lineSeparator());
+                stringBuilder.append("ÁR: ").append(cursor.getInt(4));
+                stringBuilder.append(System.lineSeparator());
                 stringBuilder.append(System.lineSeparator());
             }
             txtViewOsszes.setText(stringBuilder.toString());

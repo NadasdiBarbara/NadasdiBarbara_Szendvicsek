@@ -43,7 +43,7 @@ public class DBHelper extends SQLiteOpenHelper {
         //return db.query(TABLE_NAME, new String[]{COL_ID,COL_NEV,COL_LEIRAS,COL_ELKESZITES,COL_AR},null,null,null,null,null);
         //return db.rawQuery("SELECT nev FROM szendvicsek WHERE ar <= ?", new String[]{ar});
         return db.rawQuery("SELECT * FROM "+TABLE_NAME + " WHERE "+COL_AR
-                +" = ? ", new String[]{ar});
+                +" <= ? ", new String[]{ar});
     }
     public boolean rogzit(String nev, String leiras, int perc, int ar){
         SQLiteDatabase db = this.getReadableDatabase();
