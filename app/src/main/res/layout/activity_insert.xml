@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InsertActivity"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="NÉV"
+        android:inputType="text"
+        android:id="@+id/editNev"
+        android:textAlignment="center"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="LEÍRÁS"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:id="@+id/editLeiras"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ELKÉSZÍTÉSI IDŐ (perc)"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:id="@+id/editPerc"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ÁR"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:id="@+id/editArInsert"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FELVÉTEL"
+        android:id="@+id/btnFelvetel"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VISSZA"
+        android:id="@+id/btnVissza"/>
+
+</LinearLayout>
